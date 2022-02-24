@@ -11,7 +11,7 @@
   - name: copy war 
     copy: 
      src: /var/lib/jenkins/workspace/Sara-Deploy_on_Container/webapp/target/webapp.war 
-     dest: /opt/docker/Sara
+     dest: /opt/docker
  
   - name: Stop current container 
     command: docker stop sara-devops-container 
@@ -28,7 +28,7 @@
   - name: create docker image using war file 
     command: docker build -t sara-devops-image:latest . 
     args: 
-     chdir: /opt/docker/Sara
+     chdir: /opt/docker
  
   - name: run container 
-    command: docker run -d --name sara-devops-container -p 8081:8080 sara-devops-image:latest
+    command: docker run -d --name sara-devops-container -p 8082:8080 sara-devops-image:latest
