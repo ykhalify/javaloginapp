@@ -15,9 +15,7 @@
 
   - name: Stop current container 
     command: docker stop sara-devops-container 
-    when: 
-     name: sara-devops-container
-     state: present
+    ignore_errors: yes
      
   - name: remove stopped container 
     command: docker rm sara-devops-container 
