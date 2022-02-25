@@ -12,11 +12,16 @@
     copy: 
      src: /var/lib/jenkins/workspace/Sara-Deploy_on_Container/webapp/target/webapp.war 
      dest: /opt/docker
- 
+     
+  - name: Find if container sara-devops-container is running 
+    command: docker ps | grep sara-devops-container
+    register: result
+    ignore_errors: true
+
   - name: Stop current container 
     command: docker stop sara-devops-container 
-    ignore_errors: yes 
-
+    when: result is suceeded 
+     
   - name: remove stopped container 
     command: docker rm sara-devops-container 
     ignore_errors: yes 
