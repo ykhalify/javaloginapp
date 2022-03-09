@@ -29,7 +29,7 @@
      state: absent
  
   - name: create docker image using war file 
-    docker image:
+    docker_image:
      name: sara-devops-image:latest   
      build_path: /opt/docker/sara
      state: present
