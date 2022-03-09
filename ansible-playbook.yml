@@ -2,7 +2,6 @@
 - hosts: all
  
   vars:
-
    ansible_host_key_checking: false 
  
  
@@ -14,25 +13,20 @@
      dest: /opt/docker
 
   - name: Stop current container 
-    docker_container: 
-     name: sara-devops-container 
-     state: stopped
-     
-  - name: remove stopped container 
-    docker_container: 
-     name: sara-devops-container 
-     state: absent
+    command: docker stop sara-devops-container 
+    ignore_errors: yes
 
-  - name: remove docker images # Clean up 
-    docker_image: 
-     name: sara-devops-image:latest
-     state: absent
+  - name: remove stopped container 
+    command: docker rm sara-devops-container 
+    ignore_errors: yes 
+  - name: remover docker images # Clean up task 
+    command: docker rmi sara-devops-image:latest 
+    ignore_errors: yes # May not find image if first run
  
   - name: create docker image using war file 
-    docker_image:
-     name: sara-devops-image:latest   
-     build_path: /opt/docker/sara
-     state: present
+    command: docker build -t sara-devops-image:latest . 
+    args: 
+     chdir: /opt/docker
  
   - name: run container 
     command: docker run -d --name sara-devops-container -p 8082:8080 sara-devops-image:latest
