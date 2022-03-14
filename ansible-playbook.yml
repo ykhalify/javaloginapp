@@ -30,3 +30,9 @@
  
   - name: run container 
     command: docker run -d --name sara-devops-container -p 8082:8080 sara-devops-image:latest
+    
+  - name: install grype
+    command : curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /.
+  
+  - name: run vulnerability scan
+    command: ./grype sara-devops-image:latest --scope AllLayers
