@@ -32,4 +32,6 @@
     command: docker run -d --name sara-devops-container -p 8082:8080 sara-devops-image:latest
     
   - name: run vulnerability scan
+    args:
+     chdir: /opt/docker
     command: ./grype sara-devops-image:latest --scope AllLayers
