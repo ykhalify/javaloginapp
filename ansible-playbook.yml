@@ -35,3 +35,9 @@
     args:
      chdir: /opt/docker
     command: ./grype sara-devops-image:latest --scope AllLayers
+    register: scanresults
+    
+  - name: Saving output to local file
+    copy:
+     content: "{{ scanresults.stdout }}"
+     dest: "./gryperesults.txt"
