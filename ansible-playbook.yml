@@ -13,33 +13,21 @@
      dest: /opt/docker
 
   - name: Stop current container 
-    docker_container: 
-      name: sara-devops-container 
-      state: stopped
-
+    command: docker stop sara-devops-container 
+    ignore_errors: yes
+    
   - name: remove stopped container 
-    docker_container: 
-      name: sara-devops-container 
-      state: absent
+    command: docker rm sara-devops-container 
+    ignore_errors: yes 
     
   - name: remover docker images # Clean up task 
-    docker_image:  
-      name: sara-devops-image:latest 
-      state: absent 
+    command: docker rmi sara-devops-image:latest 
+    ignore_errors: yes # May not find image if first run
  
   - name: create docker image using war file 
-    docker_image: 
-      name: sara-devops-image:latest  
-      build_path: /opt/docker/Sara
-      state: present
+    command: docker build -t sara-devops-image:latest . 
+    args: 
+     chdir: /opt/docker
  
   - name: run container 
-    docker_container: 
-      name: sara-devops-container 
-      state: started 
-      image: sara-devops-image:latest 
-      detach: yes 
-      ports: 
-      - "8082:8080" 
-
-    
+    command: docker run -d --name sara-devops-container -p 8082:8080 sara-devops-image:latest
