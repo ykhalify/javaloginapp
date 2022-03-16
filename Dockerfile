@@ -1,5 +1,5 @@
 FROM tomcat:latest
 
-MAINTAINER Hiba
+MAINTAINER Sara
 
-COPY ./webapp.war /usr/local/tomcat/webapps
+COPY ./bootcamp.war /usr/local/tomcat/webapps
