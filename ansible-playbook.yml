@@ -30,9 +30,11 @@
 
   - name: create docker image using war file 
     docker_image: 
-      name: sara-devops-image:latest . 
-      build_path: /opt/docker/sara
+      name: sara-devops-image:latest 
+      build:
+        path: /opt/docker
       state: present
+      source: build
 
   - name: run container 
     docker_container: 
