@@ -8,6 +8,6 @@
   tasks:
  
   - name: copy report 
-    copy:  
+    fetch:  
      src: /home/ansadmin/report.json
      dest: /var/lib/jenkins/workspace/Sara_Advanced_Deployment_withJFrog
