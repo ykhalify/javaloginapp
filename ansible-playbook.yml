@@ -9,7 +9,7 @@
  
   - name: copy war 
     copy: 
-     src: /var/lib/jenkins/workspace/Sara-Deploy_on_Container/webapp/target/webapp.war 
+     src: /var/lib/jenkins/workspace/Sara_Advanced_Deployment_withJFrog/target/bootcamp.war 
      dest: /opt/docker
 
   - name: Stop current container 
