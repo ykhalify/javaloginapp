@@ -8,9 +8,9 @@
   tasks:
   
    - name: copy Dockerfile 
-    copy: 
-     src: /var/lib/jenkins/workspace/Sara_Advanced_Deployment_withJFrog/Dockerfile
-     dest: /opt/docker/
+     copy: 
+      src: /var/lib/jenkins/workspace/Sara_Advanced_Deployment_withJFrog/Dockerfile
+      dest: /opt/docker/
      
   - name: copy war 
     copy: 
