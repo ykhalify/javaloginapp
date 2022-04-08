@@ -4,10 +4,6 @@
        ansible_host_key_checking:  false
        become: true
   tasks:
-  - name: copy war
-    copy:
-      src: /var/lib/jenkins/workspace/Deploy-Bootcamp_Advanced/target/bootcamp.war
-      dest: /opt/docker/sara
   - name: Stop current container
     command: docker stop sara-devops-container
     ignore_errors: yes
