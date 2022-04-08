@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: 10.4.0.13
   vars:
        ansible_host_key_checking:  false
        become: true
