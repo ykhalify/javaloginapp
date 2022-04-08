@@ -16,6 +16,6 @@
   - name: create docker image using war file
     command: docker build -t sara-devops-image:latest .
     args:
-      chdir: /opt/docker/sara
+      chdir: /opt/docker/
   - name: run container
     command: docker run -d --name sara-devops-container -p 8081:8080 sara-devops-image:latest
