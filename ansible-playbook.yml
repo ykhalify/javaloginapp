@@ -10,12 +10,12 @@
   - name: copy Dockerfile 
     copy: 
      src: /var/lib/jenkins/workspace/Sara_Advanced_Deployment_withJFrog/Dockerfile
-     dest: /opt/docker/
+     dest: /opt/docker/sara
      
   - name: copy war 
     copy: 
      src: /var/lib/jenkins/workspace/Sara_Advanced_Deployment_withJFrog/target/bootcamp.war 
-     dest: /opt/docker
+     dest: /opt/docker/sara
 
   - name: Stop current container 
     docker_container: 
