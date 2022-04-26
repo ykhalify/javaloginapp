@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-DevSecOPs démo <a href="login">Login Here</a>
+DevSecOPs en action 2.0 <a href="login">Login Here</a>
 </body>
 </html>
