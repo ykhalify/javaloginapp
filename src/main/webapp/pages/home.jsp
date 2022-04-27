@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Bienvenue dans Bootcamp!</title>
 </head>
 <body>
-DevSecOPs en action 2.0 <a href="login">Login Here</a>
+DevSecOPs en action! 
 </body>
 </html>
