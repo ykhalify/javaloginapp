@@ -7,6 +7,6 @@
 <title>Bienvenue dans Bootcamp!</title>
 </head>
 <body>
-DevSecOPs en action! 
+DevSecOps en action 2.0!
 </body>
 </html>
