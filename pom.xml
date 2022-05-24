@@ -41,12 +41,8 @@
     		<groupId>log4j</groupId>
     		<artifactId>log4j</artifactId>
     		<version>1.2.17</version>
-<<<<<<< HEAD
 		</dependency> -->
-		
-=======
 		<dependency>
->>>>>>> 3c34ab6a53892621f650b3dd751717679f553c4a
 		    <groupId>org.apache.tomcat</groupId>
 		    <artifactId>tomcat-jasper</artifactId>
 		    <version>9.0.31</version>
