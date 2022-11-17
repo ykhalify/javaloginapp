@@ -8,19 +8,19 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>sara-demo</groupId>
-	<artifactId>sara-demo</artifactId>
+	<groupId>sara-test</groupId>
+	<artifactId>sara-test</artifactId>
 	<version>2.0-RELEASE</version>
 	<packaging>war</packaging>
-	<name>sara-demo</name>
-	<description>DevOps project for Spring Boot</description>
+	<name>sara-test</name>
+	<description>DevOps project for Spring Boot test</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<sonar.dependencyCheck.htmlReportPath>/var/lib/jenkins/workspace/Deploy-Bootcamp_Advanced/target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
-		<sonar.dependencyCheck.jsonReportPath>/var/lib/jenkins/workspace/Deploy-Bootcamp_Advanced/target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
+		<sonar.dependencyCheck.htmlReportPath>/var/lib/jenkins/workspace/Sara-IntegrateSonarQube/target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
+		<sonar.dependencyCheck.jsonReportPath>/var/lib/jenkins/workspace/Sara-IntegrateSonarQube/target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
 		<sonar.dependencyCheck.summarize>true</sonar.dependencyCheck.summarize>
-		<sonar.host.url>http://10.4.0.5:9000/</sonar.host.url>
+		<sonar.host.url>http://10.19.2.4:9000/</sonar.host.url>
 	</properties>
 
 
