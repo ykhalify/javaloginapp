@@ -17,8 +17,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<sonar.dependencyCheck.htmlReportPath>/var/lib/jenkins/workspace/Sara-IntegrateSonarQube/target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
-		<sonar.dependencyCheck.jsonReportPath>/var/lib/jenkins/workspace/Sara-IntegrateSonarQube/target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
+		<sonar.dependencyCheck.htmlReportPath>/var/lib/jenkins/workspace/Sara-IntegrateSonarQube_Scanner/target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
+		<sonar.dependencyCheck.jsonReportPath>/var/lib/jenkins/workspace/Sara-IntegrateSonarQube_Scanner/target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
 		<sonar.dependencyCheck.summarize>true</sonar.dependencyCheck.summarize>
 		<sonar.host.url>http://10.19.2.4:9000/</sonar.host.url>
 	</properties>
