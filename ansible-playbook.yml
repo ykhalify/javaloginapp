@@ -1,42 +1,41 @@
----  
 - hosts: all
- 
+  become: true
   vars:
-   ansible_host_key_checking: false
-   become: true
- 
+    ansible_sudo_pass: "{{ ansible_ssh_pass }}"
  
   tasks:
   
   - name: copy Dockerfile 
     copy: 
-     src: /var/lib/jenkins/workspace/Sara-DeployOnContainer/Dockerfile
+     src: /var/lib/jenkins/workspace/soufiane_test_2/Dockerfile
      dest: /opt/docker
      
   - name: copy war 
     copy: 
-     src: /var/lib/jenkins/workspace/Sara-DeployOnContainer/webapp/target/webapp.war 
+     src: /var/lib/jenkins/workspace/soufiane_test_2/webapp/target/webapp.war 
      dest: /opt/docker
 
   - name: Stop current container 
     docker_container: 
-      name: sara-devops-container 
+      name: soufiane_test_2-devops-container 
       state: stopped
     ignore_errors: yes 
 
   - name: remove stopped container 
     docker_container: 
-      name: sara-devops-container 
+      name: soufiane_test_2-devops-container 
       state: absent
+    ignore_errors: true
 
-  - name: remover docker images # Clean up task 
+  - name: remove docker images # Clean up task 
     docker_image:  
-      name: sara-devops-image:latest 
+      name: soufiane_test_2-devops-image:latest 
       state: absent 
+    ignore_errors: yes 
 
   - name: create docker image using war file 
     docker_image: 
-      name: sara-devops-image:latest 
+      name: soufiane_test_2-devops-image:latest 
       build:
         path: /opt/docker
       state: present
@@ -44,9 +43,9 @@
 
   - name: run container 
     docker_container: 
-      name: sara-devops-container 
+      name: soufiane_test_2-devops-container 
       state: started 
       image: sara-devops-image:latest 
       detach: yes 
       ports: 
-      - "8082:8080" 
+      - "8089:8080" 
