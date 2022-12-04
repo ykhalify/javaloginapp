@@ -17,10 +17,6 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<sonar.dependencyCheck.htmlReportPath>/var/lib/jenkins/workspace/Sara-Deploywith_SonarQube_Scanner/target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
-		<sonar.dependencyCheck.jsonReportPath>/var/lib/jenkins/workspace/Sara-Deploywith_SonarQube_Scanner/target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
-		<sonar.dependencyCheck.summarize>true</sonar.dependencyCheck.summarize>
-		<sonar.host.url>http://10.19.2.4:9000/</sonar.host.url>
 	</properties>
 
 
@@ -37,11 +33,18 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
     		<groupId>log4j</groupId>
     		<artifactId>log4j</artifactId>
     		<version>1.2.17</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.17.0</version>
 		</dependency>
+
 		<dependency>
 		    <groupId>org.apache.tomcat</groupId>
 		    <artifactId>tomcat-jasper</artifactId>
@@ -90,10 +93,11 @@
 			</plugin>
 
 			<!-- OWASP Dependency check pluggin -->
+			
 			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
-				<version>6.1.1</version>
+				<version>7.3.2</version>
 				<configuration>
 					<formats>
 						<format>html</format>
