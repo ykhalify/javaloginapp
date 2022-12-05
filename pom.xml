@@ -8,11 +8,11 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>soufiane_test_3</groupId>
-	<artifactId>soufiane_test_3</artifactId>
+	<groupId>YOUR_INFO_HERE</groupId>
+	<artifactId>YOUR_INFO_HERE</artifactId>
 	<version>2.0-RELEASE</version>
 	<packaging>war</packaging>
-	<name>soufiane_test_3</name>
+	<name>YOUR_INFO_HERE</name>
 	<description>DevOps project for Spring Boot test</description>
 
 	<properties>
@@ -33,11 +33,11 @@
 			</exclusions>
 		</dependency>
 
-		<!-- <dependency>
+		<dependency>
     		<groupId>log4j</groupId>
     		<artifactId>log4j</artifactId>
     		<version>1.2.17</version>
-		</dependency> -->
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
