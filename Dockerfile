@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-MAINTAINER Sara
+MAINTAINER Soufiane
 
 COPY ./bootcamp.war /usr/local/tomcat/webapps
 
