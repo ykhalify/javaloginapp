@@ -102,6 +102,7 @@
 					<formats>
 						<format>html</format>
 						<format>json</format>
+						<format>xml</format>
 					</formats>
 				</configuration>
 			</plugin>
