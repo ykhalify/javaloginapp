@@ -2,6 +2,7 @@
   become: true
   vars:
     ansible_sudo_pass: "{{ ansible_ssh_pass }}"
+    ansible_python_interpreter: /usr/bin/python3
  
   tasks:
   
