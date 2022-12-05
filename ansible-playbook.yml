@@ -12,7 +12,7 @@
      
   - name: copy war 
     copy: 
-     src: /var/lib/jenkins/workspace/soufiane_test_3/webapp/target/webapp.war 
+     src: /var/lib/jenkins/workspace/soufiane_test_3/target/bootcamp.war 
      dest: /opt/docker
 
   - name: Stop current container 
