@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-MAINTAINER Soufiane
+MAINTAINER <YOUR_NAME_HERE>
 
 COPY ./bootcamp.war /usr/local/tomcat/webapps
 
