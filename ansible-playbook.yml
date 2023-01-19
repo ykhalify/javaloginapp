@@ -15,11 +15,11 @@
         dest: /opt/docker/yassine
 
     - name: Stop current container
-      command: docker stop yass-devops-container
+      command: docker stop yassine-devops-container
       ignore_errors: yes
 
     - name: remove stopped container
-      command: docker rm yass-devops-container
+      command: docker rm yassine-devops-container
       ignore_errors: yes
 
     - name: remover docker images # Clean up 
