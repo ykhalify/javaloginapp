@@ -6,7 +6,7 @@
     tasks:
     - name: copy Dockerfile
       copy:
-        src: /var/lib/jenkins/workspace/Yassine/Dockerfile
+        src: /var/lib/jenkins/workspace/Yassine-Deploy_on_Container/Dockerfile
         dest: /opt/docker/yassine
 
     - name: copy war
