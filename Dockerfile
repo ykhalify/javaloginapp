@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-MAINTAINER <YOUR_NAME_HERE>
+MAINTAINER <Yassine>
 
 COPY ./bootcamp.war /usr/local/tomcat/webapps
 

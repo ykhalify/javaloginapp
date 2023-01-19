@@ -1,0 +1,35 @@
+---
+  - hosts: all
+    become: true
+    vars:
+      ansible_sudo_pass: “{{ ansible_ssh_pass }}”	       
+    tasks:
+    - name: copy Dockerfile
+      copy:
+        src: /var/lib/jenkins/workspace/Yassine/Dockerfile
+        dest: /opt/docker/yassine
+
+    - name: copy war
+      copy:
+        src: /var/lib/jenkins/workspace/Yassine-Deploy_on_Container/webapp/target/webapp.war
+        dest: /opt/docker/yassine
+
+    - name: Stop current container
+      command: docker stop yass-devops-container
+      ignore_errors: yes
+
+    - name: remove stopped container
+      command: docker rm yass-devops-container
+      ignore_errors: yes
+
+    - name: remover docker images # Clean up 
+      command: docker rmi simple-devops-image:latest
+      ignore_errors: yes # May not find image if first run
+
+    - name: create docker image using war file
+      command: docker build -t simple-devops-image:latest .
+      args:
+        chdir: /opt/docker/yassine
+
+    - name: run container
+      command: docker run -d --name yassine-devops-container -p 8081:8080 simple-devops-image:latest
